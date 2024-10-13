@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curator</title>
+    <style>
+        body {
+            background: url('64.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+        }
+        .timer {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .question-container {
+            margin: 15px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .message {
+            font-size: 24px;
+            color: #FF0000;
+            display: none; /* Hidden until timer ends */
+        }
+        .submit {
+            margin-top: 20px;
+            font-size: 18px;
+            display: none; /* Hidden until timer ends */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Curator<br>It grows, as it goes</h1>
+    <div class="timer" id="timer">15:00</div>
+
+    <div id="questions">
+        <div class="question-container">
+            <div class="question">1. What does "admire" mean?</div>
+            a) Dislike <br>
+            b) Respect and like <br>
+            c) Ignore <br>
+            d) Fear <br>
+        </div>
+        <div class="question-container">
+            <div class="question">2. What does "precise" mean?</div>
+            a) Vague <br>
+            b) Exact and accurate <br>
+            c) Unclear <br>
+            d) Approximate <br>
+        </div>
+        <div class="question-container">
+            <div class="question">3. What does "neglect" mean?</div>
+            a) Care for <br>
+            b) Ignore or fail to care for <br>
+            c) Appreciate <br>
+            d) Remember <br>
+        </div>
+        <div class="question-container">
+            <div class="question">4. What does "oppose" mean?</div>
+            a) Support <br>
+            b) Resist or disagree with <br>
+            c) Assist <br>
+            d) Lead <br>
+        </div>
+        <div class="question-container">
+            <div class="question">5. What does "eager" mean?</div>
+            a) Reluctant <br>
+            b) Excited and enthusiastic <br>
+            c) Calm <br>
+            d) Uninterested <br>
+        </div>
+        <div class="question-container">
+            <div class="question">6. What does "efficient" mean?</div>
+            a) Wasteful <br>
+            b) Productive and effective <br>
+            c) Slow <br>
+            d) Weak <br>
+        </div>
+        <div class="question-container">
+            <div class="question">7. What does "scarce" mean?</div>
+            a) Abundant <br>
+            b) Limited and rare <br>
+            c) Common <br>
+            d) Easy to find <br>
+        </div>
+        <div class="question-container">
+            <div class="question">8. What does "content" mean?</div>
+            a) Satisfied and happy <br>
+            b) Angry <br>
+            c) Upset <br>
+            d) Worried <br>
+        </div>
+        <div class="question-container">
+            <div class="question">9. What does "criticize" mean?</div>
+            a) Praise <br>
+            b) Point out faults <br>
+            c) Compliment <br>
+            d) Encourage <br>
+        </div>
+        <div class="question-container">
+            <div class="question">10. What does "genuine" mean?</div>
+            a) Fake <br>
+            b) Real and authentic <br>
+            c) False <br>
+            d) Pretend <br>
+        </div>
+
+        <!-- Additional questions -->
+        <div class="question-container">
+            <div class="question">11. What does "essential" mean?</div>
+            a) Optional <br>
+            b) Necessary and important <br>
+            c) Unimportant <br>
+            d) Minor <br>
+        </div>
+        <div class="question-container">
+            <div class="question">12. What does "fragile" mean?</div>
+            a) Strong <br>
+            b) Easily broken or damaged <br>
+            c) Durable <br>
+            d) Sturdy <br>
+        </div>
+        <div class="question-container">
+            <div class="question">13. What does "generous" mean?</div>
+            a) Selfish <br>
+            b) Willing to give and share <br>
+            c) Greedy <br>
+            d) Stingy <br>
+        </div>
+        <div class="question-container">
+            <div class="question">14. What does "impress" mean?</div>
+            a) Bore <br>
+            b) To make someone admire <br>
+            c) Disappoint <br>
+            d) Confuse <br>
+        </div>
+        <div class="question-container">
+            <div class="question">15. What does "logical" mean?</div>
+            a) Senseless <br>
+            b) Clear and reasonable <br>
+            c) Confusing <br>
+            d) Unfounded <br>
+        </div>
+        <div class="question-container">
+            <div class="question">16. What does "mature" mean?</div>
+            a) Immature <br>
+            b) Fully developed or grown <br>
+            c) Childish <br>
+            d) Young <br>
+        </div>
+        <div class="question-container">
+            <div class="question">17. What does "neutral" mean?</div>
+            a) Biased <br>
+            b) Not taking sides <br>
+            c) Aggressive <br>
+            d) Hostile <br>
+        </div>
+        <div class="question-container">
+            <div class="question">18. What does "optimistic" mean?</div>
+            a) Negative <br>
+            b) Hopeful and positive <br>
+            c) Pessimistic <br>
+            d) Doubtful <br>
+        </div>
+        <div class="question-container">
+            <div class="question">19. What does "practical" mean?</div>
+            a) Useless <br>
+            b) Useful and realistic <br>
+            c) Impractical <br>
+            d) Unrealistic <br>
+        </div>
+        <div class="question-container">
+            <div class="question">20. What does "rapid" mean?</div>
+            a) Slow <br>
+            b) Fast and quick <br>
+            c) Delayed <br>
+            d) Gradual <br>
+        </div>
+        <div class="question-container">
+            <div class="question">21. What does "sincere" mean?</div>
+            a) Dishonest <br>
+            b) Honest and genuine <br>
+            c) Fake <br>
+            d) Insincere <br>
+        </div>
+        <div class="question-container">
+            <div class="question">22. What does "timid" mean?</div>
+            a) Confident <br>
+            b) Shy and lacking courage <br>
+            c) Brave <br>
+            d) Bold <br>
+        </div>
+        <div class="question-container">
+            <div class="question">23. What does "unique" mean?</div>
+            a) Common <br>
+            b) One of a kind <br>
+            c) Ordinary <br>
+            d) Regular <br>
+        </div>
+        <div class="question-container">
+            <div class="question">24. What does "vacant" mean?</div>
+            a) Occupied <br>
+            b) Empty and available <br>
+            c) Filled <br>
+            d) Full <br>
+        </div>
+        <div class="question-container">
+            <div class="question">25. What does "visible" mean?</div>
+            a) Invisible <br>
+            b) Able to be seen <br>
+            c) Hidden <br>
+            d) Concealed <br>
+        </div>
+    </div>
+
+    <div class="message" id="message">Uppps, your time is up..</div>
+    <div class="submit" id="submit">Submit your answers to the curator</div>
+
+    <script>
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+        const timerElement = document.getElementById("timer");
+        const questionsElement = document.getElementById("
